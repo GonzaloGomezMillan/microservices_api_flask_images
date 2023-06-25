@@ -1,7 +1,7 @@
 version: '3.1'
 
 services:
-   db:
+  db:
     image: mysql:8.0.33
     command: --default-authentication-plugin=mysql_native_password
     ports:
@@ -10,12 +10,12 @@ services:
       MYSQL_ROOT_PASSWORD: mbit
       MYSQL_USER: mbit
       MYSQL_DATABASE: Pictures
-   
-   api:
-    build: api
+    volumes:
+      - ./database:/var/lib/mysql
+
+  api:
+    build: ./api
     ports:
       - 80:80
-
-   volumes:
-    - ./database:/var/lib/mysql
-    - ./images_db:/app/images_db
+    volumes:
+      - ./images_db:/app/images_db
