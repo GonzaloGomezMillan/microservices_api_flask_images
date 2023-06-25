@@ -1,0 +1,11 @@
+{
+    "imagekit":{
+        "public_key":"...",
+        "private_key":"...",
+        "url_endpoint":"..."
+    },
+    "imagga":{
+        "api_key":"...",
+        "api_secret":"..."
+    }
+}
